@@ -29,6 +29,9 @@ ALLOWED_HOSTS = []
 
 DISQUS_WEBSITE_SHORTNAME = 'mybootcampblog'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # Application definition
 
 INSTALLED_APPS = [

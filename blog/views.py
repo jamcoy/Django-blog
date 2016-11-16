@@ -4,7 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 
 
-def post_detail(request, id):
+def post_detail(request, db_id):
     """
     Create a view that return a single
     Post object based on the post ID and
@@ -12,7 +12,7 @@ def post_detail(request, id):
     template. Or return a 404 error if the
     post is not found
     """
-    post = get_object_or_404(Post, pk=id)
+    post = get_object_or_404(Post, pk=db_id)
     return render(request, "postdetail.html", {'post': post})
 
 

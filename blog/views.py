@@ -28,3 +28,12 @@ def post_list(request):
                                 ).order_by('-published_date')
     return render(request, "blogposts.html", {'posts': posts})
 
+
+def top_posts(request):
+    """
+    Get list of posts ordered by number of views
+    Return top 5. Render to blogposts.html
+    """
+    posts = Post.objects.filter(published_date__lte=timezone.now()
+                                ).order_by('-views')[:5]
+    return render(request, "blogposts.html", {'posts': posts})

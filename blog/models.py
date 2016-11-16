@@ -14,6 +14,7 @@ class Post(models.Model):
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True)
+    views = models.IntegerField(default=0)  # Record how often a post is seen
 
     def publish(self):
         self.published_date = timezone.now()

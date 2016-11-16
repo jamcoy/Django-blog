@@ -13,6 +13,8 @@ def post_detail(request, db_id):
     post is not found
     """
     post = get_object_or_404(Post, pk=db_id)
+    post.views += 1  # clock up the number of post views
+    post.save()
     return render(request, "postdetail.html", {'post': post})
 
 

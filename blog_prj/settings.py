@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1  # must be present if also using django.contrib.sites
+
 # Application definition
 
 INSTALLED_APPS = [
